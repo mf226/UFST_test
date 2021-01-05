@@ -15,7 +15,12 @@ public class REST {
 
     @Get(value = "/numbertotext/{number}", produces = MediaType.TEXT_PLAIN)
     public String numberToText(double number) {
-        return converter.NumberToString(number);
+        try {
+            return converter.NumberToString(number);
+        } catch (IllegalArgumentException ex) {
+            return "Error: " + ex.getMessage();
+        }
+
     }
 
     @Get(value = "/test", produces = MediaType.TEXT_PLAIN)
