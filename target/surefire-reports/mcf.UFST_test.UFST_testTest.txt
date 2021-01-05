@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: mcf.UFST_test.UFST_testTest
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 13.232 s - in mcf.UFST_test.UFST_testTest
