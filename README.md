@@ -1,4 +1,8 @@
-## Feature http-client documentation
+Download repo
 
-- [Micronaut Micronaut HTTP Client documentation](https://docs.micronaut.io/latest/guide/index.html#httpClient)
+`docker build -t test-app .`
 
+`docker run -d -p 8080:8080 test-app`
+
+Go to http://localhost:8080/numbertotext?input=123.25
+__

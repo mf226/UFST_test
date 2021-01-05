@@ -3,6 +3,7 @@ package mcf.UFST_test;
 import io.micronaut.http.MediaType;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
+import io.micronaut.http.annotation.QueryValue;
 
 @Controller("/")
 public class REST {
@@ -13,11 +14,17 @@ public class REST {
         this.converter = converter;
     }
 
-    @Get(value = "/numbertotext/{number}", produces = MediaType.TEXT_PLAIN)
-    public String numberToText(double number) {
+    @Get(value = "/numbertotext", produces = MediaType.TEXT_PLAIN)
+    public String numberToText(@QueryValue String input) {
         try {
-            return converter.NumberToString(number);
+            System.out.println(input);
+            double value = Double.parseDouble(input);
+            System.out.println(value);
+            return converter.NumberToString(value);
         } catch (IllegalArgumentException ex) {
+            System.out.println(ex.getMessage());
+            System.out.println(ex.getStackTrace());
+            System.out.println(ex.toString());
             return "Error: " + ex.getMessage();
         }
 
